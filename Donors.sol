@@ -25,9 +25,9 @@ contract Donors{
         uint amount,
         uint timestamp
      );
-     // type casting the owner of the contract to be able to pay 
-       constructor(){
-        owner = payable(msg.sender);
+     
+       constructor(address owner){
+        owner = (msg.sender);
        }
          function donate() payable public {
             require(msg.value > 0, "Insufficient payment");
